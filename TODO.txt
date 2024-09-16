@@ -1,0 +1,30 @@
+Process:
+- Driver for SevenSeg ✔
+- Driver for RTC ✔
+- Connection protocol ✔
+- Driver for Motor ✔
+- Low power mode hardware interrupt button (17uA) ✔
+- Low power mode transciever (>1uA) ✔
+- Battery guage for low battery detection ✔
+- Transmitter complete compiled code ✔
+- Algorithm for detecting shade positions for clock alarms (thinking of just using time (5s), with switch case on hardware interrupt)
+* 0 : 10 timer position, constantly updating when shades used. Will not exceed boundries. Need option to zero. Extra switch on receiver, use switches on transitter as zeros top and bottom?
+
+- Update motor driver to include duration (seconds?)
+- Update rtc driver to include alarms and verify
+
+
+
+To setup bootloader to new chip, use atmel studio and follow: https://www.youtube.com/watch?v=EsLOMdu50YU
+You may not even need bootloader, and can try to simply program in atmel.
+
+To make o files: avr-gcc -std=c99 -Wall -O -DF_CPU=16000000 -mmcu=atmega328p -I. -I../mylib -c ../mylib/l293dMotor.c -o l293dMotor.o
+
+
+To get started with programming:
+1.) Download latest avrdude version
+2.) Download VSCode and Atmel studio
+3.) To program for uno: avrdude -c arduino -b 115200 -P COM14 -p atmega328p -U flash:w:demo.hex:i
+4.) To program for mega: avrdude -v -p atmega2560 -c wiring -P COM15 -b 115200 -D -U flash:w:demo.hex:i
+
+RTC Low Power wake up: https://github.com/Ovidiu22/PwrMgmt-Atmega328p_DS3231

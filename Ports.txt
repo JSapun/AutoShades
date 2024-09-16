@@ -1,0 +1,47 @@
+Receiever Ports:
+nRF24L01, Motor, SevengSeg, RTC, 3.3v converter 
+B0 - nRF24L01 (CSN)
+B1 - 
+B2 - 
+B3 - nRF24L01 (MOSI)
+B4 - nRF24L01 (MISO)
+B5 - nRF24L01 (SCK)
+SCL - SCL (RTC)
+SDA - SDA (RTC) 
+D0 - 
+D1 - 
+D2 - 
+D3 - nRF24L01 (IRQ)
+D4 - Motor Enable
+D5 - Motor 1A // Might need to change because of transciever
+D6 - Motor 2A
+D7 - nRF24L01 (CE)
+C0 - SevenSeg DIO 
+C1 - SevenSeg CLK
+C2 - 
+C3 - 
+C4 - ??Problem with I2C Comm for SevenSeg??
+C5 - 
+
+Transmitter Ports:
+nRF24L01, 3 LEDS, 3 Buttons, 2 switches (clock set)
+B0 - nRF24L01 (CSN)
+B1 - Up button 
+B2 - Down button
+B3 - nRF24L01 (MOSI)
+B4 - nRF24L01 (MISO)
+B5 - nRF24L01 (SCK)
+D0 - 
+D1 - 
+D2 - On button
+D3 - nRF24L01 (IRQ)
+D4 - Red LED (low bat)
+D5 - Orange LED (transmitting)
+D6 - Green LED (Connection established)
+D7 - nRF24L01 (CE)
+C0 - Switch clock 1
+C1 - Switch clock 2
+C2 - 
+C3 - 
+C4 - 
+C5 - 
