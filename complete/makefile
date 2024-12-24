@@ -5,14 +5,14 @@
 
 # MAIN is the name of the top-level program in your project (without the .c extension)
 
-MAIN = demo
+MAIN = demo_r
 
 # LIBDIR is the path to the folder (relative to your project folder) that contains 
 # additional libraries that your project may use.
 LIBDIR      = ../mylib/
 
 # LIBRARIES are the libraries in your LIBDIR folder that the current project uses
-LIBRARIES = ioE28 USARTE28 nrf24l01 battVCC
+LIBRARIES = nrf24l01 ioE28 USARTE28 l293dMotor ds3231RTC tm1637SevenSeg i2c battVCC
 
 # automatically add paths and extensions to libraries
 LIBDIRS = $(addprefix $(LIBDIR)/, $(LIBRARIES))
@@ -34,7 +34,7 @@ SOURCES = $(MAIN).c $(LIBSOURCES)
 #PROGRAMMER = -c arduino -b 115200 -P /dev/tty.usbmodem*
 
 # For Windows:
-PROGRAMMER = -c arduino -b 115200 -P COM4
+PROGRAMMER = -c arduino -b 115200 -P COM13
 
 # Shouldn't have to change these unless you decide to target a different Arduino
 # than the UNO.

@@ -5,15 +5,15 @@
 
 # MAIN is the name of the top-level program in your project (without the .c extension)
 
-MAIN = demo
+MAIN = demo_t
 
 # LIBDIR is the path to the folder (relative to your project folder) that contains 
 # additional libraries that your project may use.
 LIBDIR = ../mylib
 
 # LIBRARIES are the libraries in your LIBDIR folder that the current project uses
-LIBRARIES = l293dMotor
-#ioE28 USARTE28
+LIBRARIES = 
+
 # automatically add paths and extensions to libraries
 LIBDIRS = $(addprefix $(LIBDIR)/, $(LIBRARIES))
 LIBSOURCES = $(addsuffix .c, $(LIBDIRS))

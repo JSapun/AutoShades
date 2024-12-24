@@ -7,12 +7,16 @@ Process:
 - Low power mode transciever (>1uA) ✔
 - Battery guage for low battery detection ✔
 - Transmitter complete compiled code ✔
-- Algorithm for detecting shade positions for clock alarms (thinking of just using time (5s), with switch case on hardware interrupt)
-* 0 : 10 timer position, constantly updating when shades used. Will not exceed boundries. Need option to zero. Extra switch on receiver, use switches on transitter as zeros top and bottom?
+- Algorithm for detecting shade positions for clock alarms (thinking of just using time (5s), with switch case on hardware interrupt) ✔ (Not verified)
+        0 : 10 timer position, constantly updating when shades used. Will not exceed boundries. Need option to zero. Extra switch on receiver, use switches on transitter as zeros top and bottom?
+- Update motor driver to include duration (seconds?) ✔ (Not verified)
+- Update rtc driver to include alarms and verify ✔
+- Understand connection in more detail, how much time, how to make it responsive ✔
+- Complete implementation reciever ✔
+- Complete implementation transmitter ✔
 
-- Update motor driver to include duration (seconds?)
-- Update rtc driver to include alarms and verify
-
+- Problems with timer0 recieve
+- Currently disabeled sleep transmit
 
 
 To setup bootloader to new chip, use atmel studio and follow: https://www.youtube.com/watch?v=EsLOMdu50YU

@@ -11,13 +11,12 @@
 
 
 #include "l293dMotor.h"
-#include <avr/io.h>
 
 void l293d_init(void){
 	// Set pins as output
-	DDRD |= (1 << DDD2);
-	DDRD |= (1 << DDD3);
-	DDRD |= (1 << DDD4);
+	DDRD |= (1 << L293D_EN);
+	DDRD |= (1 << L293D_1A);
+	DDRD |= (1 << L293D_2A);
 }
 
 void l293d_clockwise(void){
@@ -29,11 +28,11 @@ void l293d_counterclockwise(void){
 	PORTD |= (1 << L293D_1A); // High for CC
 	PORTD &= ~(1 << L293D_2A); // High for C
 }
-
+ 
 void l293d_stop(void){
 	PORTD &= ~(1 << L293D_EN);
 }
 
-void l293d_start(uint8_t duration){
+void l293d_start(void){
 	PORTD |= (1 << L293D_EN); // Enable bit
 }

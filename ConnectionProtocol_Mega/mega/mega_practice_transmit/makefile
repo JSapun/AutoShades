@@ -5,14 +5,14 @@
 
 # MAIN is the name of the top-level program in your project (without the .c extension)
 
-MAIN = transmit
+MAIN = test_speed
 
 # LIBDIR is the path to the folder (relative to your project folder) that contains 
 # additional libraries that your project may use.
-LIBDIR = ../../mylib
+LIBDIR = ../../../mylib
 
 # LIBRARIES are the libraries in your LIBDIR folder that the current project uses
-LIBRARIES = nRF24L01 ioE28 USARTE28
+LIBRARIES = nRF24L01_for_mega ioE28 USARTE28
 #ioE28 USARTE28
 # automatically add paths and extensions to libraries
 LIBDIRS = $(addprefix $(LIBDIR)/, $(LIBRARIES))
@@ -34,13 +34,13 @@ SOURCES = $(MAIN).c $(LIBSOURCES)
 #PROGRAMMER = -c arduino -b 115200 -P /dev/tty.usbmodem*
 
 # For Windows:
-PROGRAMMER = -c arduino -b 115200 -P COM14
+PROGRAMMER = -c wiring -b 115200 -P COM14
 
 # Shouldn't have to change these unless you decide to target a different Arduino
 # than the UNO.
-DEVICE     = atmega328p
+DEVICE     = atmega2560   
 CLOCK      = 16000000
-FUSES      = -U hfuse:w:0xde:m -U lfuse:w:0xff:m -U efuse:w:0x05:m
+FUSES      = #-U hfuse:w:0xde:m -U lfuse:w:0xff:m -U efuse:w:0x05:m
 
 # Find header and object files corresponding to your sources
 OBJECTS=$(SOURCES:.c=.o)
@@ -56,7 +56,7 @@ HEADERS=$(SOURCES:.c=.h)
 # -DF_CPU passes the clock speed down to units that need it, e.g., delay functions
 CFLAGS = -std=c99 -Wall -O -DF_CPU=$(CLOCK) -mmcu=$(DEVICE) -I. -I$(LIBDIR)
 COMPILE = avr-gcc $(CFLAGS)
-AVRDUDE = avrdude $(PROGRAMMER) -p $(DEVICE)
+AVRDUDE = avrdude -V $(PROGRAMMER) -p $(DEVICE)
 
 
 # symbolic targets:

@@ -27,8 +27,9 @@ static void i2c_wait(void){
 }
 
 void i2c_start_condition(void){
+	TWCR &= ~(1 << TWEN); // IDK so i don't have to use i2c_reset - 09/25/2024
 	TWCR = (1 << TWINT) | (1 << TWSTA) | (1 << TWEN);
-    i2c_wait();
+    i2c_wait(); 
 }
 
 void i2c_stop_condition(void){

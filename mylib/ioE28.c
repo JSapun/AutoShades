@@ -74,7 +74,7 @@ static void divOut(unsigned int div) {
 
 void tfp_printString(const char *str) {
 	char ch;
-	while (ch=*(str++)) {
+	while ((ch=*(str++))) { // small fix using another set of paranthesis - 09/24/2024
 		tfp_putchar(ch);
 	}
 }
@@ -171,7 +171,7 @@ void tfp_printf(const char *fmt, ...)
 			// small fix involving fixed width printing of negative numbers
 			if ((w>0) && (*p=='-')) {
 				tfp_putchar('-');
-				*p++;
+				p++; // small fix turning *p++; into p++; -- 09/24/2024
 			}
 			// end fix
 			while (w-- > 0) 

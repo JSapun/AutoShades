@@ -25,9 +25,9 @@ int main(void ){
 
   // Set time 
   struct rtc_time time = {0};
-  time.sec = 58;
-  time.min = 59;
-  time.hour = 23;
+  time.sec = 0;
+  time.min = 8;
+  time.hour = 15;
   ds3231_write_time(&time);
   myprintf("Set!\n\r");
 

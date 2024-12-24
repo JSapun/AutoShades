@@ -16,6 +16,12 @@
 
 #define RTC_WADDR 0b11010000
 #define RTC_RADDR 0b11010001
+#define RTC_AlarmCTRLAddr 0x0E
+#define RTC_Alarms_On 0b00000111
+#define Alarm1_Addr 0x07
+#define Alarm2_Addr 0x0B
+#define RTC_STATUS_ADDR 0x0F
+
 
 struct rtc_time{
 	uint8_t sec;
@@ -33,3 +39,9 @@ struct rtc_date{
 void ds3231_init(void);
 void ds3231_read_time(struct rtc_time *time);
 void ds3231_write_time(struct rtc_time *time);
+void ds3231_write_alarm(uint8_t alarm, struct rtc_time *time);
+void ds3231_read_alarm(uint8_t alarm, struct rtc_time *time);
+void ds3231_stop_alarms(void);
+void ds3231_clear_alarm(uint8_t alarm);
+uint8_t DS3231_get_status_reg(void);
+uint8_t DS3231_get_control_reg(void);

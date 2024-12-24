@@ -1,3 +1,6 @@
+
+#include <stdio.h>
+
 /* Function headers to read keyboard input */
 
 /* Define a string variable, pass it to this function

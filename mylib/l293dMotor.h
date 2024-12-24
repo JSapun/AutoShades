@@ -10,13 +10,14 @@
  */
 
 
-#define	L293D_EN				PORTD2
-#define	L293D_1A				PORTD3
-#define	L293D_2A				PORTD4
+#define	L293D_EN				PORTD4
+#define	L293D_1A				PORTD5
+#define	L293D_2A				PORTD6
 
+#include <avr/io.h>
 
 void l293d_init(void);
 void l293d_clockwise(void);
 void l293d_counterclockwise(void);
 void l293d_stop(void);
-void l293d_start(uint8_t duration);
+void l293d_start(void);

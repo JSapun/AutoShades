@@ -9,7 +9,7 @@ MAIN = recieve
 
 # LIBDIR is the path to the folder (relative to your project folder) that contains 
 # additional libraries that your project may use.
-LIBDIR = ../../mylib
+LIBDIR = ../../../mylib
 
 # LIBRARIES are the libraries in your LIBDIR folder that the current project uses
 LIBRARIES = nrf24l01_for_mega
@@ -34,7 +34,7 @@ SOURCES = $(MAIN).c $(LIBSOURCES)
 #PROGRAMMER = -c arduino -b 115200 -P /dev/tty.usbmodem*
 
 # For Windows:
-PROGRAMMER = -c wiring -b 115200 -P COM15
+PROGRAMMER = -c wiring -b 115200 -P COM14
 
 # Shouldn't have to change these unless you decide to target a different Arduino
 # than the UNO.

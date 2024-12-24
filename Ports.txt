@@ -1,17 +1,17 @@
 Receiever Ports:
 nRF24L01, Motor, SevengSeg, RTC, 3.3v converter 
 B0 - nRF24L01 (CSN)
-B1 - 
+B1 - Calibration LED
 B2 - 
 B3 - nRF24L01 (MOSI)
 B4 - nRF24L01 (MISO)
 B5 - nRF24L01 (SCK)
 SCL - SCL (RTC)
 SDA - SDA (RTC) 
-D0 - 
-D1 - 
-D2 - 
-D3 - nRF24L01 (IRQ)
+D0 - Switch 1 (Calibrate Top)
+D1 - Switch 2 (Calibrate Bottom)
+D2 - RTC (IRQ) - not used
+D3 - nRF24L01 (IRQ) - not used
 D4 - Motor Enable
 D5 - Motor 1A // Might need to change because of transciever
 D6 - Motor 2A

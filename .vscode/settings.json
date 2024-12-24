@@ -1,0 +1,15 @@
+{
+    "C_Cpp.errorSquiggles": "disabled",
+    "files.associations": {
+        "ds3231rtc.h": "c",
+        "i2c.h": "c",
+        "usarte28.h": "c",
+        "ds3231rtc_old.h": "c",
+        "my_i2c.h": "c",
+        "stdint.h": "c",
+        "ioe28.h": "c",
+        "nrf24l01.h": "c",
+        "stdlib.h": "c",
+        "l293dmotor.h": "c"
+    }
+}

@@ -15,7 +15,7 @@
 
 
 void i2c_init(void);
-void i2c_uninit ( void );
+void i2c_reset(void);
 void i2c_start_condition(void);
 void i2c_stop_condition(void);
 void i2c_send_byte(unsigned char byte);
